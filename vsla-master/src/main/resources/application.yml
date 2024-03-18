@@ -1,0 +1,42 @@
+# Set the name of the Spring Boot application
+spring:
+  application:
+    name: VLSA-APP
+
+  # Set the configuration for connecting to the PostgreSQL database
+  datasource:
+    url: jdbc:postgresql://10.185.15.40:5432/vslaapp
+    username: vslaapp
+    password: vsla#4321
+
+  # Set the configuration for Hibernate, the ORM framework used by Spring Data JPA
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update  # Set the strategy for Hibernate to create/update the database schema. Hibernate ddl auto (create, create-drop, validate, update)
+    show-sql: false
+
+
+server:
+  port: 9000
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:certificate.p12
+    key-store-password: vsla@123
+
+# Set the conditional property for seeding the database
+# NOTE: Set it to true only if you are starting this app for the first time.
+database:
+  seed: false
+
+# Secret key for jwt
+JWT_SECRET_KEY:
+  AB(G+KbPeShVkYp3s6v9y$B&E)H@McQf
+
+# vsla base url
+VSLA_ADMIN:  
+  BASE_URL: http://localhost:8112/api/v1/
+
+ 
