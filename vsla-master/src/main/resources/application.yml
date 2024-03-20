@@ -5,7 +5,7 @@ spring:
 
   # Set the configuration for connecting to the PostgreSQL database
   datasource:
-    url: jdbc:postgresql://10.185.15.40:5432/vslaapp
+    url: jdbc:postgresql://localhost:8111/vslaapp
     username: vslaapp
     password: vsla#4321
 
@@ -20,7 +20,7 @@ spring:
 
 
 server:
-  port: 9000
+  port: 8000
   ssl:
     key-store-type: PKCS12
     key-store: classpath:certificate.p12
